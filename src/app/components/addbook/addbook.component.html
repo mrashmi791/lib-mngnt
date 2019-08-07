@@ -1,0 +1,87 @@
+<div class="well container">
+        <table class="table">
+                <thead>
+                        <tr>
+                                <th>sr</th>
+                                <th>Book Name</th>
+                                <th>Author Name</th>
+                                <th>Publication</th>
+                                <th>No of books</th>
+                                <th>Actions</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        <tr *ngFor="let book of bookList; let i = index;">
+                                <td>{{book.sr}}</td>
+                                <td>{{book.bookName}}</td>
+                                <td>{{book.authorName}}</td>
+                                <td>{{book.publication}}</td>
+                                <td>{{book.noOfBooks}}</td>
+                                <td>
+                                        <a href="javascript:void(0)" class="btn-danger" (click)="deleteRecord(i)">Delete</a>
+                                        <a href="javascript:void(0)" class="btn-primary"
+                                        data-toggle="modal" data-target="#myModal"
+                                         (click)="editRecord(book, i)">Edit</a>
+                                </td>
+
+                        </tr>
+
+                </tbody>
+        </table>
+</div>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<!-- <button type="button" class="btn btn-info btn-lg" (click)="deleteRecord()">Delete Record</button> -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body">
+                               <div class="row form-group">
+                                  <div class="col-md-3">S.No</div>
+                                  <div class="col-md-9">
+                                    <input type="text" class="form-control" [(ngModel)]="addNewBook.sr" />
+                                  </div>
+                               </div>
+
+                               <div class="row form-group">
+                                  <div class="col-md-3">Book Name</div>
+                                  <div class="col-md-9">
+                                    <input type="text" class="form-control" [(ngModel)]="addNewBook.bookName" />
+                                  </div>
+                               </div>
+
+                               <div class="row form-group">
+                                  <div class="col-md-3">Author Name</div>
+                                  <div class="col-md-9">
+                                    <input type="text" class="form-control" [(ngModel)]="addNewBook.authorName" />
+                                  </div>
+                               </div>
+
+                               <div class="row">
+                                  <div class="col-md-3">Publication</div>
+                                  <div class="col-md-9">
+                                    <input type="text" class="form-control" [(ngModel)]="addNewBook.publication" />
+                                  </div>
+                               </div>
+
+                               <div class="row form-group">
+                                  <div class="col-md-3">No Of Books</div>
+                                  <div class="col-md-9">
+                                    <input type="text" class="form-control" [(ngModel)]="addNewBook.noOfBooks" />
+                                  </div>
+                               </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" (click)="addNewBookSave()" data-dismiss="modal">Add Book</button>
+                        </div>
+                </div>
+
+        </div>
+</div>

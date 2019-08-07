@@ -1,0 +1,84 @@
+<div class="body">
+    <div class="form-cls">
+        <h2>Registration</h2>
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label for="firstName" class="col-md-4 control-label">First Name</label>
+                <div class="col-md-8">
+                    <input type="text" [(ngModel)]="register.firstName" id="firstName" placeholder="First Name" class="form-control" autofocus>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="lastName" class="col-md-4 control-label">Last Name</label>
+                <div class="col-md-8">
+                    <input type="text" [(ngModel)]="register.lastName" id="lastName" placeholder="Last Name" class="form-control" autofocus>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label for="email" class="col-md-4 control-label">Email* </label>
+                <div class="col-md-8">
+                    <input type="email" [(ngModel)]="register.email" id="email" placeholder="Email" class="form-control" name="email">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="password" class="col-md-4 control-label">Password*</label>
+                <div class="col-md-8">
+                    <input type="password" [(ngModel)]="register.password" id="password" placeholder="Password" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label for="password" class="col-md-4 control-label">Confirm Password*</label>
+                <div class="col-md-8">
+                    <input type="password" [(ngModel)]="register.confirmPassword" id="password" placeholder="Password" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="birthDate" class="col-md-4 control-label">Date of Birth*</label>
+                <div class="col-md-8">
+                    <input type="date" [(ngModel)]="register.dob" id="birthDate" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-6">
+                <label for="phoneNumber" class="col-md-4 control-label">Phone number </label>
+                <div class="col-md-8">
+                    <input type="phoneNumber" [(ngModel)]="register.Phone" id="phoneNumber" placeholder="Phone number" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="control-label col-md-4">Gender</label>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="radio-inline">
+                                <input type="radio" [(ngModel)]="register.gender" id="femaleRadio" name="gender" value="Female">Female
+                            </label>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="radio-inline">
+                                <input type="radio" [(ngModel)]="register.gender" id="maleRadio" name="gender" value="Male">Male
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" routerLink='/login'>Already Registered</button>
+
+            <button type="submit" class="btn btn-primary" (click)="saveDetails()">Register</button>
+
+        </div>
+        <div>
+
+        </div>
+    </div>
+</div>
