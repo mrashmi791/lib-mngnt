@@ -1,0 +1,9 @@
+
+.card-header:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.card-header {
+    transition: transform .2s;
+}

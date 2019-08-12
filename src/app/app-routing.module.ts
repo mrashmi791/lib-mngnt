@@ -6,6 +6,9 @@ import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AddbookComponent } from './components/addbook/addbook.component';
+import { NewsComponent } from './components/news/news.component';
+import { SearchComponent } from './components/search/search.component';
+import { EmployeelistComponent } from './components/employeelist/employeelist.component';
 const routes: Routes = [
   {
     path: '',
@@ -34,6 +37,18 @@ const routes: Routes = [
   {
     path: 'reset',
     component: ResetPasswordComponent
+  },
+  {
+    path: 'news',
+    component: NewsComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
+  },
+  {
+    path: 'emplist',
+    component: EmployeelistComponent
   },
   { 
     path: '**',   

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
@@ -10,6 +12,9 @@ import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AddbookComponent } from './components/addbook/addbook.component';
+import { NewsComponent } from './components/news/news.component';
+import { SearchComponent } from './components/search/search.component';
+import { EmployeelistComponent } from './components/employeelist/employeelist.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +24,14 @@ import { AddbookComponent } from './components/addbook/addbook.component';
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    AddbookComponent
+    AddbookComponent,
+    NewsComponent,
+    SearchComponent,
+    EmployeelistComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],

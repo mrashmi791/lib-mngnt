@@ -1,0 +1,18 @@
+<div class="container">
+        <div class="search-container">
+           
+                <!-- <input type="text" placeholder="Search.." name="search"> -->
+                <button type="submit" (click)="getSearchList()">Search</button>
+             
+            </div>
+           
+            <div class="row">
+                    <div class="card col-md-4 form-group" *ngFor="let res of searchObj.restaurants">
+                        <div class="card-header"><img src="{{res.restaurant.featured_image}}" style="height: 300px; width: 300px;"/></div>
+                        <div class="card-body">{{res.restaurant.name}}</div> 
+                        <div class="card-body">{{res.restaurant.location.address}}</div> 
+                        <div class="card-footer"><a href="{{res.restaurant.url}}" target="_blank">More details</a></div>
+                    </div>
+                    
+                </div>
+</div>

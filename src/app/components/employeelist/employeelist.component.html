@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="table-data">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of employee; let i = index;">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.employee_name}}</td>
+                    <td>{{emp.employee_age}}</td>
+                    <td>{{emp.employee_salary}}</td>
+                    <td><a href="javascript:void(0)" data-toggle="modal" data-target="#myModal"
+                            (click)="selectEmployee(emp)">Edit</a>
+                        <a href="javascript:void(0)" (click)="deleteEmployee(emp, i)">Delete</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div>
+            <button class="btn btn-success" data-toggle="modal" data-target="#myModal" (click)="setAddFlag()">Add
+                new</button>
+        </div>
+
+    </div>
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">{{(isAdd)?'Add':'Edit'}} Employee</h4>
+                    <button type="button" class="close" (click)="resetEmpObj()" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row form-group">
+                        <div class="col-md-3">Name</div>
+                        <div class="col-md-6"><input type="text" [(ngModel)]="selectedEmployee.employee_name" /></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-3">Age</div>
+                        <div class="col-md-6"><input type="text" [(ngModel)]="selectedEmployee.employee_age" /></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-3">Salary</div>
+                        <div class="col-md-6"><input type="text" [(ngModel)]="selectedEmployee.employee_salary" /></div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal"
+                        (click)="updateEmployee()">Save</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

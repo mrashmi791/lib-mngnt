@@ -1,9 +1,13 @@
 
  export class Book {
-     sr: number;
-     bookName: string;
-     authorName: string;
-     publication: string;
-     noOfBooks: number;
+
+   items: any[];
+   kind: string;
+   totalItems: number;
+    //  sr: number;
+    //  bookName: string;
+    //  authorName: string;
+    //  publication: string;
+    //  noOfBooks: number;
 
  }

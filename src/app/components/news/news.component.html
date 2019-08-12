@@ -1,0 +1,10 @@
+<div class="container">
+<div class="row">
+    <div class="card col-md-4 form-group" *ngFor="let art of newsObj.articles">
+        <div class="card-header"><img src="{{art.urlToImage}}" style="height: 300px; width: 300px;"/></div>
+        <div class="card-body">{{art.title}}</div> 
+        <div class="card-footer"><a href="{{art.url}}" target="_blank">More details</a></div>
+    </div>
+    
+</div>
+</div>
